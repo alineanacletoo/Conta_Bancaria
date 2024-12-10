@@ -29,46 +29,46 @@ export function main(){
         opcao = readlinkSync.questionInt("");
 
         if(opcao == 9){
-            console.log("\nBanco do Brazil com Z - O seu Futuro começa aqui ")
+            console.log("Banco do Brazil com Z - O seu Futuro começa aqui ")
             sobre();
             process.exit(0);
         }
 
         switch(opcao){
             case 1:
-                console.log("\n\nCriar Conta\n\n");
+                console.log("Criar Conta");
 
                 break;
             case 2: 
-                console.log("\n\nListar Todas as Contas\n\n"); 
+                console.log("Listar Todas as Contas"); 
                 
                 break;
             case 3:
-                console.log("\n\nConsultar dados de Conta - por número\n\n");
+                console.log("Consultar dados de Conta - por número");
                 
                 break;
             case 4: 
-                console.log("\n\nAtualizar dados da Conta\n\n");
+                console.log("Atualizar dados da Conta");
                 
                 break;
             case 5:
-                console.log("\n\nApagar uma Conta\n\n");
+                console.log("Apagar uma Conta");
 
                 break;
             case 6:
-                console.log("\n\nSaque\n\n");
+                console.log("Saque");
                 
                 break;
             case 7: 
-                console.log("\n\nDepósito\n\n");
+                console.log("Depósito");
                 
                 break;
             case 8:
-                console.log("\n\nTransferência entre Contas\n\n");
+                console.log("Transferência entre Contas");
                 
                 break;
             default:
-                console.log("\nOpção Inválida\n");
+                console.log("Opção Inválida");
                 
                 break;
         }
