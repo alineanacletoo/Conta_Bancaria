@@ -1,5 +1,5 @@
 import  readlinkSync = require("readline-sync");
-import { colors } from "./util/cores";
+import { colors } from "./src/util/cores";
 
 export function main(){
     let opcao: number;
