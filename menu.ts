@@ -201,9 +201,9 @@ export function main() {
 /* Função com os dados da pessoa desenvolvedora */
 function sobre(): void {
     console.log("\n*****************************************************");
-    console.log("Projeto Desenvolvido por: ");
+    console.log("Projeto Desenvolvido por: Aline Anacleto ");
     console.log("Generation Brasil - generation@generation.org");
-    console.log("github.com/conteudoGeneration");
+    console.log("https://github.com/alineanacletoo");
     console.log("*****************************************************");
 }
 
