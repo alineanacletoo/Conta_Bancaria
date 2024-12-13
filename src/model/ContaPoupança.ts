@@ -1,39 +1,25 @@
 import { Conta } from "./conta";
 
-export class ContaPoupança extends Conta{
-    private _limite: number;
+export class ContaPoupanca extends Conta {
 
+    private _aniversario: number;
 
-	constructor(numero: number, agencia: number, tipo: number, titular: string, saldo: number, limite: number) {
-		super(numero, agencia, tipo, titular, saldo);
-        this._limite = limite;
-	}
-    
-	public get limite(): number {
-		return this._limite;
-	}
-
-
-	public set limite(value: number) {
-		this._limite = value;
-	}
-
-    public sacar(valor: number): boolean{
-        if(valor > (this.saldo + this._limite)){
-            console.log("saldo insuficiente");
-            return false;
-        }
-           
-
-        this.saldo -= valor
-        return true;
+    constructor(numero: number, agencia: number, tipo: number, titular: string, 
+        saldo: number, aniversario: number) {
+        super(numero, agencia, tipo, titular, saldo);
+        this._aniversario = aniversario;
+    }
+    public get aniversario() {
+        return this._aniversario;
     }
 
+    public set aniversario(aniversario: number) {
+        this._aniversario = aniversario;
+    }
 
-    public visualizar() {
+    public visualizar(): void {
         super.visualizar();
-        console.log(`Limite da Conta: ${this._limite}`);
+        console.log("Dia do aniversário: " + this._aniversario);
     }
-
 
 }
