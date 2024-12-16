@@ -4,13 +4,14 @@ import { ContaPoupanca } from "./src/model/ContaPoupança";
 import { colors } from "./src/util/cores";
 import { ContaController } from "./src/controller/contaController";
 
+
 export function main() {
 
     // Instância da Classe ContaController
     let contas: ContaController = new ContaController();
 
     // Variáveis Auxiliares
-    let opcao, numero, agencia, tipo, saldo, limite, aniversario: number;
+    let opcao, numero, agencia, tipo, saldo, limite, aniversario, valor, numeroDestino: number;
     let titular: string;
     const tiposContas = ['Conta Corrente', 'Conta Poupanca'];
 
@@ -29,14 +30,6 @@ export function main() {
     contas.cadastrar(cp2);
 
     contas.listarTodas();
-
-    //Novas Instâncias da Classe ContaCorrente (Objetos)
-    contas.cadastrar(new ContaCorrente(contas.gerarNumero(), 1234, 1, 'Amanda Magro', 1000000.00, 100000.00));
-    contas.cadastrar(new ContaCorrente(contas.gerarNumero(), 4578, 1, 'João da Silva', 1000.00, 100.00));
- 
-    // Novas Instâncias da Classe ContaPoupança (Objetos)
-    contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), 5789, 2, "Geana Almeida", 10000, 10));
-    contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), 5698, 2, "Jean Lima", 15000, 15));
 
     while (true) {
 
@@ -117,7 +110,7 @@ export function main() {
 
                 console.log("Digite o número da Conta: ");
                 numero = readlinesync.questionInt("");
-                contas.procurarPrNumero(numero);
+                contas.procurarPorNumero(numero);
 
                 keyPress()
                 break;
@@ -175,16 +168,43 @@ export function main() {
                 break;
             case 6:
                 console.log(colors.fg.whitestrong, "\n\nSaque\n\n", colors.reset);
+            
+                console.log("Digite o número da Conta: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("\nDigite o valor do Saque (R$): ");
+                valor = readlinesync.questionFloat("");
+
+                contas.sacar(numero, valor);
 
                 keyPress()
                 break;
             case 7:
                 console.log(colors.fg.whitestrong, "\n\nDepósito\n\n", colors.reset);
 
+                console.log("Digite o número da Conta: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("\nDigite o valor do Depósito (R$): ");
+                valor = readlinesync.questionFloat("");
+
+                contas.depositar(numero, valor);
+
                 keyPress()
                 break;
             case 8:
                 console.log(colors.fg.whitestrong, "\n\nTransferência entre Contas\n\n", colors.reset);
+
+                console.log("Digite o número da Conta de Origem: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o número da Conta de Destino: ");
+                numeroDestino = readlinesync.questionInt("");
+
+                console.log("\nDigite o valor do Depósito (R$): ");
+                valor = readlinesync.questionFloat("");
+
+                contas.transferir(numero, numeroDestino, valor);
 
                 keyPress()
                 break;
@@ -201,9 +221,9 @@ export function main() {
 /* Função com os dados da pessoa desenvolvedora */
 function sobre(): void {
     console.log("\n*****************************************************");
-    console.log("Projeto Desenvolvido por: Aline Anacleto ");
+    console.log("Projeto Desenvolvido por: ");
     console.log("Generation Brasil - generation@generation.org");
-    console.log("https://github.com/alineanacletoo");
+    console.log("github.com/conteudoGeneration");
     console.log("*****************************************************");
 }
 
