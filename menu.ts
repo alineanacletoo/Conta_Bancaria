@@ -222,8 +222,8 @@ export function main() {
 function sobre(): void {
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
-    console.log("Generation Brasil - generation@generation.org");
-    console.log("github.com/conteudoGeneration");
+    console.log("Aline Anacleto - alineo@generation.org");
+    console.log("https://github.com/alineanacletoo");
     console.log("*****************************************************");
 }
 
